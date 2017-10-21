@@ -3,13 +3,17 @@ function BookLookup(service){
 
   this.search=(isbn)=>{
     let obj = service(isbn)
-    return service(isbn)
+    return {
+      bookName : obj.title,
+      cover : obj.images,
+      isbn : obj.isbn
+    }
   }
 }
 test('test search function',()=>{
   const returnObject = {
-    bookName : 'TOTORO',
-    cover : "totoro.png",
+    title : 'TOTORO',
+    images : "totoro.png",
     isbn : "123456"
   }
   const mockAmazon = jest.fn('123456')
@@ -21,5 +25,5 @@ test('test search function',()=>{
   let result = app.search('123456')
 
 
-  expect(result).toBe(returnObject)
+  expect(result.bookName).toBe("TOTORO")
 })
