@@ -28,4 +28,5 @@ test('test search function',()=>{
 
   expect(result.bookName).toBe("TOTORO")
   expect(mockAmazon).toBeCalled()
+  expect(mockAmazon).toBeCalledWith('123456')
 })
