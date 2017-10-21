@@ -5,6 +5,7 @@ function BookLookup(service){
     let obj = service(isbn)
     return {
       bookName : obj.title,
+      //bookName :"TOTORO",
       cover : obj.images,
       isbn : obj.isbn
     }
@@ -26,4 +27,5 @@ test('test search function',()=>{
 
 
   expect(result.bookName).toBe("TOTORO")
+  expect(mockAmazon).toBeCalled()
 })
