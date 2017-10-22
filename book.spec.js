@@ -26,7 +26,7 @@ test('test search function',()=>{
   let result = app.search('123456')
 
 
-  expect(result.bookName).toBe("TOTORO")
+  expect(result.bookName).toBe(returnObject.title)
   expect(mockAmazon).toBeCalled()
   expect(mockAmazon).toBeCalledWith('123456')
 })
