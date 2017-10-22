@@ -27,6 +27,8 @@ test('test search function',()=>{
 
 
   expect(result.bookName).toEqual(returnObject.title)
+  expect(result.cover).toEqual(returnObject.images)
+  expect(result.isbn).toEqual(returnObject.isbn)
   expect(mockAmazon).toBeCalled()
   expect(mockAmazon).toBeCalledWith('123456')
 })
